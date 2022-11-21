@@ -10,12 +10,7 @@ import Modal from '../components/Modal'
 import { TheFurniture_problem, TheFurniture_further } from '../MessegConst'
 
 function MyProjectFirst(props){
-    
-    const [defaultStyle, setDefaultStyle] = useState({
-        width: '2vw',
-        borderRadius: '3px',
-        marginLeft: '5px'
-    })
+
     const [openModal, setOpenModal] = useState(null)
 
     return(
@@ -23,16 +18,16 @@ function MyProjectFirst(props){
         <p>На следующих сторонах куба вы сможете посмотреть мои работы!</p>
             <h5>TheFurniture</h5>
             <div>
-                <img src={ShopCatalog} style={defaultStyle} 
+                <img src={ShopCatalog} style={props.defaultStyle} 
                     onPointerUp={()=> {setOpenModal('img')
                     document.body.querySelector('.theFurniture-modal').classList.toggle('close');}}/>
-                <img src={ShopRoom} style={defaultStyle} 
+                <img src={ShopRoom} style={props.defaultStyle} 
                     onPointerUp={()=> {setOpenModal('img')
                     document.body.querySelector('.theFurniture-modal').classList.toggle('close');}}/>
-                <img src={ShopFilter} style={defaultStyle}
+                <img src={ShopFilter} style={props.defaultStyle}
                     onPointerUp={()=> {setOpenModal('img')
                     document.body.querySelector('.theFurniture-modal').classList.toggle('close');}} />
-                <img src={ShopSearch} style={defaultStyle} 
+                <img src={ShopSearch} style={props.defaultStyle} 
                     onPointerUp={()=> {setOpenModal('img')
                     document.body.querySelector('.theFurniture-modal').classList.toggle('close');}}/>
             </div>

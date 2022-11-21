@@ -21,7 +21,7 @@ function MyProjectsSecond(props){
         <Square side={'bottom'} thems={props.thems}>
         <div className='weather-wrapper'>
             <h5>Weather</h5>
-            <img src={Weather} style={defaultStyle} onPointerUp={()=> {setOpenModal('img weather')
+            <img src={Weather} style={props.defaultStyle} onPointerUp={()=> {setOpenModal('img weather')
                     document.body.querySelector('.weather').classList.toggle('close');}}/>
             <a href='https://weather-pr.vercel.app/'
                className='link-project link-modal'
@@ -44,7 +44,7 @@ function MyProjectsSecond(props){
 
         <div>
             <h5>TO DO LIST</h5>
-            <img src={ToDoList} style={defaultStyle} onPointerUp={()=> {setOpenModal('img to-do')
+            <img src={ToDoList} style={props.defaultStyle} onPointerUp={()=> {setOpenModal('img to-do')
                     document.body.querySelector('.to-do').classList.toggle('close');}}/>
             <a href='https://sav-knyaz.github.io/to-do-list/'
                className='link-project link-modal'
@@ -66,7 +66,7 @@ function MyProjectsSecond(props){
         </div>
         <div>
             <h5>Form</h5>
-            <img src={Form} style={defaultStyle} onPointerUp={()=> {setOpenModal('img form')
+            <img src={Form} style={props.defaultStyle} onPointerUp={()=> {setOpenModal('img form')
                     document.body.querySelector('.form').classList.toggle('close');}}/>
             <a href='https://sav-knyaz.github.io/to-do-list/'
                className='link-project link-modal'
@@ -88,7 +88,7 @@ function MyProjectsSecond(props){
         </div>
         <div>
             <h5>Taplink</h5>
-            <img src={Taplink} style={defaultStyle} onPointerUp={()=> {setOpenModal('img taplink')
+            <img src={Taplink} style={props.defaultStyle} onPointerUp={()=> {setOpenModal('img taplink')
                     document.body.querySelector('.taplink').classList.toggle('close');}}/>
             <a href='https://sav-knyaz.github.io/sav-knyaz.githab.io/'
                className='link-project link-modal'

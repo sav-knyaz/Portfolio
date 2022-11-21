@@ -21,7 +21,11 @@ function App() {
                    {title: 'навигация по граням куба', messeg: 'В правом верхнем углу страницы находиться кнопка меню для навигации по кубу.'},
                    {title: 'ссылки на соцсети автора', messeg: 'В левом верхнем углу выводятся ссылки на соцсети автора сайта.'},
                    {title: 'скриншоты проектов', messeg: 'Нажмите на изображения под названием проекта и сможете его увидеть в большем размере.'}]
-
+  const [defaultStyle, setDefaultStyle] = useState({
+                                                width: window.screen.width > 600 ? '2.5vw' : '6vw',
+                                                borderRadius: '3px',
+                                                marginLeft: '5px'
+                                            })
   const [openBurger, setOpenBurger] = useState(false)
   const [thems, setThems] = useState('light')
   const [coordinatX, setCoordinatX] = useState(0)
@@ -53,12 +57,13 @@ function App() {
    else if(e.keyCode == 39){ setCoordinatY(coordinatY + 4)}
    else if(e.keyCode == 40){ setCoordinatX(coordinatX - 4)}
    }
-    document.ontouchstart = (e)=>{
-     setCoordTouchY(e.touches[0].clientY)
-     setCoordTouchX(e.touches[0].clientX)
-    }
+     document.ontouchstart = (e)=>{
+      setCoordTouchY(e.touches[0].clientY)
+      setCoordTouchX(e.touches[0].clientX)
+     }
    document.ontouchmove = (e)=>{
-    cub.current.style.transform = `rotateX(${coordTouchY - e.touches[0].clientY}deg ) rotateY(${coordTouchX + e.touches[0].clientX}deg )`
+    console.log(e)
+    cub.current.style.transform = `rotateX(${coordinatY - e.touches[0].clientY}deg ) rotateY(${coordinatX + e.touches[0].clientX}deg )`
   }
 
   return (
@@ -86,12 +91,12 @@ function App() {
 
       <div className='container'>
         <div className='cub' ref={cub} style={{transform: `rotateX(${coordinatX}deg ) rotateY(${coordinatY}deg )`}}>
-          <Intro thems={thems} />
+          <Intro thems={thems}/>
           <AboutMe thems={thems}/>
           <MyStack thems={thems}/>
-          <MyProjectFirst thems={thems}/>
-          <MyProjectsSecond thems={thems}/>
-          <MyProjectThird thems={thems}/>
+          <MyProjectFirst thems={thems} defaultStyle={defaultStyle}/>
+          <MyProjectsSecond thems={thems} defaultStyle={defaultStyle}/>
+          <MyProjectThird thems={thems} defaultStyle={defaultStyle}/>
         </div>
       </div>
       <div className='selector-thems'>

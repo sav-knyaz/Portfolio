@@ -11,11 +11,7 @@ import Modal from '../components/Modal'
 
 
 function LinksToProjects(props){
-    const [defaultStyle, setDefaultStyle] = useState({
-        width: '2vw',
-        borderRadius: '3px',
-        marginLeft: '5px'
-    })
+   
     const [openModal, setOpenModal] = useState(null)
 
     return(
@@ -24,15 +20,15 @@ function LinksToProjects(props){
         <div className='hud-GTA'>
         <h5>Hud длы GTA</h5>
         <div >
-            <img src={GTAfirst} style={defaultStyle} 
+            <img src={GTAfirst} style={props.defaultStyle} 
                  onPointerUp={()=> {setOpenModal('GTA-image')
                     document.body.querySelector('.gta-modal').classList.toggle('close');}}
                     className='link-modal'/>
-            <img src={GTAsecond} style={defaultStyle} 
+            <img src={GTAsecond} style={props.defaultStyle} 
                  onPointerUp={()=> {setOpenModal('GTA-image')
                     document.body.querySelector('.gta-modal').classList.toggle('close');}}
                     className='link-modal'/>
-            <img src={GTAdrive} style={defaultStyle}
+            <img src={GTAdrive} style={props.defaultStyle}
                  onPointerUp={()=> {setOpenModal('GTA-image')
                     document.body.querySelector('.gta-modal').classList.toggle('close');}}
                     className='link-modal'/>
@@ -62,7 +58,7 @@ function LinksToProjects(props){
         <div>
             <h5>Лендинг для дизайнера</h5>
             <div>
-             <img src={Alya} style={defaultStyle} onPointerUp={()=> {setOpenModal('lending-img')
+             <img src={Alya} style={props.defaultStyle} onPointerUp={()=> {setOpenModal('lending-img')
                     document.body.querySelector('.lending-modal').classList.toggle('close');}}
                     className='link-modal' />
             </div>
