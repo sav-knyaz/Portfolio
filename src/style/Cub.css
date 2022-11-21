@@ -17,7 +17,7 @@
     width: inherit;
     height: inherit;
     background-color: rgba(240, 233, 224, 0.8);
-    overflow: hidden;
+    
     backface-visibility: visible;
     transition: all 0.4s ease 0s;
   }
