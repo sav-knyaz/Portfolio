@@ -12,7 +12,7 @@ import { TheFurniture_problem, TheFurniture_further } from '../MessegConst'
 function MyProjectFirst(props){
     
     const [defaultStyle, setDefaultStyle] = useState({
-        width: '3vw',
+        width: '2vw',
         borderRadius: '3px',
         marginLeft: '5px'
     })

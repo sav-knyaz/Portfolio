@@ -12,7 +12,7 @@ import Modal from '../components/Modal'
 
 function LinksToProjects(props){
     const [defaultStyle, setDefaultStyle] = useState({
-        width: '3vw',
+        width: '2vw',
         borderRadius: '3px',
         marginLeft: '5px'
     })
