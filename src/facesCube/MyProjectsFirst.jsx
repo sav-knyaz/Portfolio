@@ -12,7 +12,7 @@ import { TheFurniture_problem, TheFurniture_further } from '../MessegConst'
 function MyProjectFirst(props){
     
     const [defaultStyle, setDefaultStyle] = useState({
-        width: '30px',
+        width: '4vw',
         borderRadius: '3px',
         marginLeft: '5px'
     })
@@ -20,7 +20,7 @@ function MyProjectFirst(props){
 
     return(
         <Square side={'left'} thems={props.thems}>
-        <h2>мои проекты</h2>
+        <p>На следующих сторонах куба вы сможете посмотреть мои работы!</p>
             <h5>TheFurniture</h5>
             <div>
                 <img src={ShopCatalog} style={defaultStyle} 

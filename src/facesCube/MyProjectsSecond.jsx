@@ -8,9 +8,10 @@ import Taplink from '../img/taplink-modal.png'
 import { Weather_about, ToDoList_about, Form_about, Taplink_about } from '../MessegConst'
 import '../style/Cub.css'
 
+
 function MyProjectsSecond(props){
     const [defaultStyle, setDefaultStyle] = useState({
-        width: '30px',
+        width: '4vw',
         borderRadius: '3px',
         marginLeft: '5px'
     })

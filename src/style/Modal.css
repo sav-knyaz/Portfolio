@@ -15,7 +15,8 @@
     padding: relative;
     background-color: rgb(240, 234, 226);
     color: rgb(24, 24, 23);
-    width: 60vw;
+    max-width: 60vw;
+    min-width: 30vw;
     height: auto;
     border-radius: 15px;
     margin: 5% auto;
@@ -38,7 +39,7 @@
     max-width: 50vw;
     height: auto;
     max-height: 70vh;
-    margin: 0 5vw;
+    margin: 0 auto;
 }
 .body-modal__image-selector{
     width: 55vw;
@@ -74,10 +75,10 @@
                 padding: relative;
                 background-color: rgb(240, 234, 226);
                 color: rgb(24, 24, 23);
-                width: 90vw;
+                max-width: 90vw;
                 height: auto;
                 border-radius: 15px;
-                margin: 45% auto;
+                margin: 2.5% auto 2.5%;
                 padding: 10px 5px 25px;
                 filter: drop-shadow(0px 0px 10px rgba(247, 247, 248, 0.623));
             }

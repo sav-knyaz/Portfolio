@@ -41,7 +41,7 @@ function Helper(props){
                              borderLeft: props.thems === 'light' ? '2px solid rgb(24, 24, 23)':
                              '2px solid rgba(240, 233, 224)',
                              transform: open ? 'rotate(-45deg)':'rotate(135deg)',
-                             top: open ? '1vh':'1.5vh'}}
+                             top: open ? '0.1vh':'1.5vh'}}
                      onPointerUp={()=> setOpen(!open)}>
                 </div>
                 <p style={{color: props.thems === 'light' ? 'rgb(24, 24, 23)':'rgba(240, 233, 224)'}}>

@@ -1,5 +1,4 @@
 import React, {useState} from 'react'
-import Image from '../components/Image'
 import Square from '../components/Square'
 import GTAfirst from '../img/gta-first.png'
 import GTAsecond from '../img/gta-second.png'
@@ -10,9 +9,10 @@ import '../style/Cub.css'
 import Modal from '../components/Modal'
 
 
+
 function LinksToProjects(props){
     const [defaultStyle, setDefaultStyle] = useState({
-        width: '30px',
+        width: '4vw',
         borderRadius: '3px',
         marginLeft: '5px'
     })
@@ -37,8 +37,8 @@ function LinksToProjects(props){
                     document.body.querySelector('.gta-modal').classList.toggle('close');}}
                     className='link-modal'/>
         </div>
-        <p>Это *коммерчиский проект и предназначается для RP GTA online.
-           Моя задача состояла в том, чтобы написать интерфейс и интергировать его в React приложение. 
+        <p>Это коммерчиский проект и предназначается для RP GTA online.
+           Моя задача состояла в том, чтобы написать интерфейс и интегрировать его в React приложение. 
            Как вы уже могли догадаться hud я писал на реакте, но с условием, что будут использоваться
             классовые компоненты, тк весь проект написан на классах.
         </p>
@@ -67,7 +67,7 @@ function LinksToProjects(props){
                     className='link-modal' />
             </div>
             <p>
-                Это тоже *коммерчиский проект. Писал его для дизайнера, это одна из моих
+                Это тоже коммерчиский проект. Писал его для дизайнера, это одна из моих
                 ранних работ и стек здесь соответсвующий: 
                 <span>HTML, CSS, JavaScript</span>
             </p>

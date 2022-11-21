@@ -1,11 +1,10 @@
 import { useRef } from 'react';
 import { useState } from 'react';
 import Helper from './components/Helper';
-import SelectorThems from './components/SelectorThems';
 import SocialNetwork from './components/SocialNetwork';
 import AboutMe from './facesCube/AboutMe';
 import Intro from './facesCube/Intro.jsx';
-import LinksToProjects from './facesCube/LinksToProjects';
+import MyProjectThird from './facesCube/MyProjectThird';
 import MyProjectFirst from './facesCube/MyProjectsFirst';
 import MyProjectsSecond from './facesCube/MyProjectsSecond';
 import MyStack from './facesCube/MyStack';
@@ -17,9 +16,9 @@ import './style/SelectorThems.css'
 
 function App() {
   const helpers = [{title: 'вращение куба', messeg: 'Используйте стрелки на клавиатуре, чтобы вращать куб или движением пальца по экрану если дисплей сенсорный.'},
-                   {title: 'фотографии автора', messeg: 'Нажмите и удерживайте фотографию, чтобы она оставалось большой.'},
+                   {title: 'фотографии автора', messeg: 'Нажмите и удерживайте фотографию, чтобы она оставалась большой.'},
                    {title: 'изменение темы', messeg: 'Чтобы изменить тему страницы, воспользуйтесь селектором в левом нижнем углу.'},
-                   {title: 'навигация по граням куба', messeg: 'В правом верхнем углу страницы находиться кнопка меню для навигации по кубую.'},
+                   {title: 'навигация по граням куба', messeg: 'В правом верхнем углу страницы находиться кнопка меню для навигации по кубу.'},
                    {title: 'ссылки на соцсети автора', messeg: 'В левом верхнем углу выводятся ссылки на соцсети автора сайта.'},
                    {title: 'скриншоты проектов', messeg: 'Нажмите на изображения под названием проекта и сможете его увидеть в большем размере.'}]
 
@@ -49,7 +48,6 @@ function App() {
     }
 
    document.onkeydown = (e)=>{
-    
         if(e.keyCode == 37){ setCoordinatY(coordinatY - 4)}
    else if(e.keyCode == 38){ setCoordinatX(coordinatX + 4)}
    else if(e.keyCode == 39){ setCoordinatY(coordinatY + 4)}
@@ -60,7 +58,7 @@ function App() {
      setCoordTouchX(e.touches[0].clientX)
     }
    document.ontouchmove = (e)=>{
-    cub.current.style.transform = `rotateX(${coordTouchY - e.touches[0].clientY}deg ) rotateY(${coordTouchX - e.touches[0].clientX}deg )`
+    cub.current.style.transform = `rotateX(${coordTouchY - e.touches[0].clientY}deg ) rotateY(${coordTouchX + e.touches[0].clientX}deg )`
   }
 
   return (
@@ -80,9 +78,9 @@ function App() {
           <li onPointerUp={()=>{setCoordinatX(-4); setCoordinatY(0)}}>Вводная часть</li>
           <li onPointerUp={()=>{setCoordinatX(-4); setCoordinatY(-88)}}>Обо мне</li>
           <li onPointerUp={()=>{setCoordinatX(-4); setCoordinatY(-180)}}>Мой стек</li>
-          <li onPointerUp={()=>{setCoordinatX(-4); setCoordinatY(88)}}>Мои прокты *</li>
-          <li onPointerUp={()=>{setCoordinatX(88); setCoordinatY(0)}}>Мои прокты **</li>
-          <li onPointerUp={()=>{setCoordinatX(-92); setCoordinatY(0)}}>Ссылки на проекты</li>
+          <li onPointerUp={()=>{setCoordinatX(-4); setCoordinatY(88)}}>Мои прокты 1</li>
+          <li onPointerUp={()=>{setCoordinatX(88); setCoordinatY(0)}}>Мои прокты 2</li>
+          <li onPointerUp={()=>{setCoordinatX(-92); setCoordinatY(0)}}>Мои проекты 3</li>
         </ul>
       </nav>
 
@@ -93,7 +91,7 @@ function App() {
           <MyStack thems={thems}/>
           <MyProjectFirst thems={thems}/>
           <MyProjectsSecond thems={thems}/>
-          <LinksToProjects thems={thems}/>
+          <MyProjectThird thems={thems}/>
         </div>
       </div>
       <div className='selector-thems'>

@@ -2,6 +2,8 @@ import React from 'react'
 import { Fragment } from 'react';
 import '../style/Cub.css'
 import '../style/ContentSides.css'
+import '../style/MediaContentSides.css'
+import '../style/MediaCub.css'
 
 function Square(props){
 

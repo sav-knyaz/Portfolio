@@ -2,19 +2,16 @@ import  React, { useRef, useState } from "react";
 import  ReactDOM from 'react-dom';
 import '../style/Modal.css'
 
-function Modal({ messeg, title, image, nameClass}){
+function Modal({ messeg, title, image, nameClass, styleImage}){
     const modal = useRef(null)
     const [indexImage, setIndexImage] = useState(0)
-    if(Array.isArray(image)){
-
-    }
- console.log(messeg)
-   // if(!isOpen) return null
+    
 
     return ReactDOM.createPortal(
-        <div className={"wrapper-modal " + nameClass } 
-             ref={modal}>
+        <div className={"wrapper-modal " + nameClass } ref={modal}>
+
           <div className="body-modal">
+
             <span onPointerUp={()=> modal.current.classList.toggle('close')}>╳</span>
             <h5>{title}</h5>
             {image === undefined ?
@@ -35,8 +32,10 @@ function Modal({ messeg, title, image, nameClass}){
                       style={{right: '1vw', transform: 'rotate(135deg)'}}></div>}
             </div>
             :
-            <img src={image} />}
+            <img src={image} style={styleImage}/>}
+
           </div>
+
         </div>
     , document.body)
 }

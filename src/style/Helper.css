@@ -11,8 +11,8 @@
 }
 .helper__block-close > div{
     display: inline-block;
-    width: 0.5vw;
-    height: 0.5vw;
+    width: 1vw;
+    height: 1vw;
     position: absolute;
     left: 1vw;
     transition: all 0.3s ease 0s;
@@ -64,9 +64,9 @@
         and (max-height: 1170px) and (min-height: 370px){
             .helper-wrapper{
                 width: 45vw;
-                font-size: 14px;
+                font-size: 11px;
             }
             .helper-body > h6{
-                font-size: 16px;
+                font-size: 13px;
             }
         }
