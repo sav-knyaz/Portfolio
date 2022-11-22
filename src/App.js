@@ -62,8 +62,7 @@ function App() {
       setCoordTouchX(e.touches[0].clientX)
      }
    document.ontouchmove = (e)=>{
-    console.log(e)
-    cub.current.style.transform = `rotateX(${coordinatY - e.touches[0].clientY}deg ) rotateY(${coordinatX + e.touches[0].clientX}deg )`
+    cub.current.style.transform = `rotateX(${coordTouchY - e.touches[0].clientY}deg ) rotateY(${coordTouchX + e.touches[0].clientX}deg )`
   }
 
   return (

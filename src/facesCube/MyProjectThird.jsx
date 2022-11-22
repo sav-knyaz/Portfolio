@@ -53,7 +53,7 @@ function LinksToProjects(props){
         {openModal === 'GTA-working-process' &&
          <Modal messeg={GtaHud_working_process} title={'Рабочий процесс'} nameClass={'gta-modal'}/>}
          {openModal === 'GTA-image' &&
-         <Modal image={[GTAfirst, GTAsecond, GTAdrive]} title={'Hud для GTA'} nameClass={'gta-modal'}/>}
+         <Modal image={[GTAfirst, GTAsecond, GTAdrive]} nameClass={'gta-modal'}/>}
         </div>
         <div>
             <h5>Лендинг для дизайнера</h5>
