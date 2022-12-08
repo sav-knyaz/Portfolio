@@ -5,7 +5,6 @@ import Square from '../components/Square'
 import MyPhoto from '../img/my-photo.jpg'
 import '../style/Cub.css'
 
-
 function Intro(props){
    
     const img = useRef(null)

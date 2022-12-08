@@ -30,10 +30,16 @@ function App() {
   const [thems, setThems] = useState('light')
   const [coordinatX, setCoordinatX] = useState(0)
   const [coordinatY, setCoordinatY] = useState(0)
-  const [coordTouchX, setCoordTouchX] = useState(0)
-  const [coordTouchY, setCoordTouchY] = useState(0)
+  //const [cashX, setCashX] = useState(0)
+  //const [cashY, setCashY] = useState(0)
   const cub = useRef(null)
   const arrayThems = ['light', 'dark']
+  let coordCubX = 0
+  let coordCubY = 0
+  let Sx = 0
+  let Sy = 0 // S это путь пройденный курсором, те (текущая координата курсора y) - cashY  = S 
+  let cashX = 0 
+  let cashY = 0 // Это первая координата полученная от тач события 
 
   if(thems === 'light'){
     document.body.style.backgroundColor = 'rgb(252, 245, 236)'
@@ -57,12 +63,28 @@ function App() {
    else if(e.keyCode == 39){ setCoordinatY(coordinatY + 4)}
    else if(e.keyCode == 40){ setCoordinatX(coordinatX - 4)}
    }
-     document.ontouchstart = (e)=>{
-      setCoordTouchY(e.touches[0].clientY)
-      setCoordTouchX(e.touches[0].clientX)
-     }
+
+   let stack = []
+
+      document.ontouchstart = (e)=>{
+       cashX = e.touches[0].clientX
+       cashY = e.touches[0].clientY
+       console.log(-10 + -100)
+      }
+
    document.ontouchmove = (e)=>{
-    cub.current.style.transform = `rotateX(${coordTouchY - e.touches[0].clientY}deg ) rotateY(${coordTouchX + e.touches[0].clientX}deg )`
+    Sx = - cashX + e.touches[0].clientX
+    Sy = - cashY + e.touches[0].clientY
+    
+
+    coordCubX += Sx
+    coordCubY += -Sy
+    
+    cub.current.style.transform = `rotateX(${coordCubY/2}deg ) rotateY(${coordCubX/2}deg )`
+
+    cashX = e.touches[0].clientX
+    cashY = e.touches[0].clientY
+
   }
 
   return (
